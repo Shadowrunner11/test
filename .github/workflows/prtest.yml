@@ -20,11 +20,11 @@ jobs:
                 | paste -sd+ - \
                 | bc)
     
-                echo "size=${size}" >> $GITHUB_ENV
+                echo "size=${size}" >> $eITHUB_ENV
                 echo ""
                 echo "Total lines changed (note: *.lock files are excluded from this count): "
                 echo $size
-                shell: bash
+
             - run: |
                 if [[ $size -gt 600 ]]
                 then
@@ -32,4 +32,3 @@ jobs:
                     echo "Please consider breaking this PR down."
                     exit 1
                 fi
-                shell: bash
